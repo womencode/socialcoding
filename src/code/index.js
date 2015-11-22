@@ -5,7 +5,7 @@ require("./index.less");
 
 function init() {
   var url = document.location.href;
-  var hasPos = url.indexOf("#")
+  var hasPos = url.indexOf("?")
   var hash = "1234"
   if (hasPos != -1) {
     hash = url.substring(hasPos+1, url.length);
