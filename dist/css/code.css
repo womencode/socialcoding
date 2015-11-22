@@ -6,8 +6,6 @@ body {
   height: 100%;
   position: relative;
 }
-/* Height / width / positioning can be customized for your use case.
-    For demo purposes, we make firepad fill the entire browser. */
 #userlist {
   position: absolute;
   left: 0;
@@ -16,7 +14,7 @@ body {
   height: auto;
   width: 175px;
 }
-#firepad {
+#firepad-container {
   position: absolute;
   left: 175px;
   top: 0;
@@ -24,6 +22,7 @@ body {
   right: 0;
   height: auto;
 }
+/* boiler-plate */
 .firepad-userlist {
   /* default height */
   height: 400px;

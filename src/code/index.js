@@ -2,7 +2,6 @@
 require("firebase");
 var FirepadUserList = require("./firepad-userlist.js")
 require("./index.less");
-require("./firepad-userlist.less")
 
 function init() {
   //// Initialize Firebase.

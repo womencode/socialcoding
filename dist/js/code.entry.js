@@ -48,7 +48,6 @@
 	__webpack_require__(2);
 	var FirepadUserList = __webpack_require__(3)
 	__webpack_require__(4);
-	__webpack_require__(8)
 
 	function init() {
 	  //// Initialize Firebase.
@@ -610,15 +609,6 @@
 
 /***/ },
 /* 4 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

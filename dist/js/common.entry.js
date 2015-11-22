@@ -44,15 +44,15 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(10);
-	__webpack_require__(13);
+	__webpack_require__(8);
+	__webpack_require__(11);
 
-	window.ui = __webpack_require__(33);
+	window.ui = __webpack_require__(31);
 
 	module.exports = ui.module({
 	    name: 'common',
 	    subModules: [
-	        __webpack_require__(35)
+	        __webpack_require__(33)
 	    ]
 	})();
 
@@ -64,37 +64,35 @@
 /* 5 */,
 /* 6 */,
 /* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */
+/* 8 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 11 */,
-/* 12 */,
-/* 13 */
+/* 9 */,
+/* 10 */,
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// js libraries
-	window._ = __webpack_require__(14);
+	window._ = __webpack_require__(12);
 
 
 	// angular core
+	__webpack_require__(14);
 	__webpack_require__(16);
 	__webpack_require__(18);
 	__webpack_require__(20);
 	__webpack_require__(22);
 	__webpack_require__(24);
-	__webpack_require__(26);
 
 	// angular extentions
-	__webpack_require__(28);
-	__webpack_require__(32);
+	__webpack_require__(26);
+	__webpack_require__(30);
 
 /***/ },
-/* 14 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/**
@@ -12449,10 +12447,10 @@
 	  }
 	}.call(this));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)(module), (function() { return this; }())))
 
 /***/ },
-/* 15 */
+/* 13 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -12468,15 +12466,15 @@
 
 
 /***/ },
-/* 16 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(17);
+	__webpack_require__(15);
 	module.exports = angular;
 
 
 /***/ },
-/* 17 */
+/* 15 */
 /***/ function(module, exports) {
 
 	/**
@@ -41385,15 +41383,15 @@
 	!window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ },
-/* 18 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(19);
+	__webpack_require__(17);
 	module.exports = 'ngAnimate';
 
 
 /***/ },
-/* 19 */
+/* 17 */
 /***/ function(module, exports) {
 
 	/**
@@ -45327,15 +45325,15 @@
 
 
 /***/ },
-/* 20 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(21);
+	__webpack_require__(19);
 	module.exports = 'ngMessages';
 
 
 /***/ },
-/* 21 */
+/* 19 */
 /***/ function(module, exports) {
 
 	/**
@@ -46026,15 +46024,15 @@
 
 
 /***/ },
-/* 22 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(23);
+	__webpack_require__(21);
 	module.exports = 'ngResource';
 
 
 /***/ },
-/* 23 */
+/* 21 */
 /***/ function(module, exports) {
 
 	/**
@@ -46715,15 +46713,15 @@
 
 
 /***/ },
-/* 24 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(25);
+	__webpack_require__(23);
 	module.exports = 'ngSanitize';
 
 
 /***/ },
-/* 25 */
+/* 23 */
 /***/ function(module, exports) {
 
 	/**
@@ -47412,15 +47410,15 @@
 
 
 /***/ },
-/* 26 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(27);
+	__webpack_require__(25);
 	module.exports = 'ngTouch';
 
 
 /***/ },
-/* 27 */
+/* 25 */
 /***/ function(module, exports) {
 
 	/**
@@ -48054,33 +48052,33 @@
 
 
 /***/ },
-/* 28 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Should already be required, here for clarity
-	__webpack_require__(16);
+	__webpack_require__(14);
 
 	// Load Angular and dependent libs
-	__webpack_require__(18);
-	__webpack_require__(29);
+	__webpack_require__(16);
+	__webpack_require__(27);
 
 	// Now load Angular Material
-	__webpack_require__(31);
+	__webpack_require__(29);
 
 	// Export namespace
 	module.exports = 'ngMaterial';
 
 
 /***/ },
-/* 29 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(30);
+	__webpack_require__(28);
 	module.exports = 'ngAria';
 
 
 /***/ },
-/* 30 */
+/* 28 */
 /***/ function(module, exports) {
 
 	/**
@@ -48484,7 +48482,7 @@
 
 
 /***/ },
-/* 31 */
+/* 29 */
 /***/ function(module, exports) {
 
 	/*!
@@ -71801,7 +71799,7 @@
 	})(window, window.angular);;window.ngMaterial={version:{full: "1.0.0-rc4-master-8051e98"}};
 
 /***/ },
-/* 32 */
+/* 30 */
 /***/ function(module, exports) {
 
 	/**
@@ -76038,14 +76036,14 @@
 	})(window, window.angular);
 
 /***/ },
-/* 33 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(34);
+	module.exports = __webpack_require__(32);
 
 
 /***/ },
-/* 34 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/**
@@ -76802,20 +76800,20 @@
 	  };
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)(module)))
 
 /***/ },
-/* 35 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.component({
 	    name: 'uiHeader',
-	    controller: __webpack_require__(36),
+	    controller: __webpack_require__(34),
 	    template: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./header.tpl.html\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()))
 	});
 
 /***/ },
-/* 36 */
+/* 34 */
 /***/ function(module, exports) {
 
 	module.exports = function HeaderCtrl() {

@@ -45,7 +45,7 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(37);
+	__webpack_require__(35);
 
 	module.exports = ui.module({
 	    name: 'root',
@@ -63,7 +63,7 @@
 
 /***/ },
 
-/***/ 37:
+/***/ 35:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
