@@ -19,7 +19,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.html$/,
-                loader: "html"
+                loader: "html?attrs=false"
             },
             {
                 test: /\.css$/,

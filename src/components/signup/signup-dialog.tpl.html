@@ -1,0 +1,45 @@
+<md-dialog aria-label="Signup" ng-cloak>
+    <form>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        <label>First name</label>
+                        <input ng-model="ctrl.user.firstName">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Last Name</label>
+                        <input ng-model="ctrl.user.lastName">
+                    </md-input-container>
+                </div>
+
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        <label>Email</label>
+                        <input type="email" ng-model="ctrl.user.email">
+                    </md-input-container>
+                </div>
+
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        <label>Password</label>
+                        <input ng-model="ctrl.user.password">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Confirm</label>
+                        <input ng-model="ctrl.user.password">
+                    </md-input-container>
+                </div>
+
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row" layout-align="end">
+            <md-button class="md-primary" ng-click="ctrl.signup()">
+                Signup
+            </md-button>
+            <md-button ng-click="ctrl.cancel()">
+                Cancel
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

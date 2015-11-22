@@ -44,55 +44,49 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(8);
-	__webpack_require__(11);
+	__webpack_require__(2);
+	__webpack_require__(7);
 
-	window.ui = __webpack_require__(31);
+	window.ui = __webpack_require__(27);
 
 	module.exports = ui.module({
 	    name: 'common',
-	    subModules: [
-	        __webpack_require__(33)
-	    ]
+	    components: __webpack_require__(29)
 	})();
 
 /***/ },
 /* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */
+/* 2 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 9 */,
-/* 10 */,
-/* 11 */
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// js libraries
-	window._ = __webpack_require__(12);
+	window._ = __webpack_require__(8);
 
 
 	// angular core
+	__webpack_require__(10);
+	__webpack_require__(12);
 	__webpack_require__(14);
 	__webpack_require__(16);
 	__webpack_require__(18);
 	__webpack_require__(20);
-	__webpack_require__(22);
-	__webpack_require__(24);
 
 	// angular extentions
+	__webpack_require__(22);
 	__webpack_require__(26);
-	__webpack_require__(30);
 
 /***/ },
-/* 12 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/**
@@ -12447,10 +12441,10 @@
 	  }
 	}.call(this));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)(module), (function() { return this; }())))
 
 /***/ },
-/* 13 */
+/* 9 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -12466,15 +12460,15 @@
 
 
 /***/ },
-/* 14 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(15);
+	__webpack_require__(11);
 	module.exports = angular;
 
 
 /***/ },
-/* 15 */
+/* 11 */
 /***/ function(module, exports) {
 
 	/**
@@ -41383,15 +41377,15 @@
 	!window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ },
-/* 16 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(17);
+	__webpack_require__(13);
 	module.exports = 'ngAnimate';
 
 
 /***/ },
-/* 17 */
+/* 13 */
 /***/ function(module, exports) {
 
 	/**
@@ -45325,15 +45319,15 @@
 
 
 /***/ },
-/* 18 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(19);
+	__webpack_require__(15);
 	module.exports = 'ngMessages';
 
 
 /***/ },
-/* 19 */
+/* 15 */
 /***/ function(module, exports) {
 
 	/**
@@ -46024,15 +46018,15 @@
 
 
 /***/ },
-/* 20 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(21);
+	__webpack_require__(17);
 	module.exports = 'ngResource';
 
 
 /***/ },
-/* 21 */
+/* 17 */
 /***/ function(module, exports) {
 
 	/**
@@ -46713,15 +46707,15 @@
 
 
 /***/ },
-/* 22 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(23);
+	__webpack_require__(19);
 	module.exports = 'ngSanitize';
 
 
 /***/ },
-/* 23 */
+/* 19 */
 /***/ function(module, exports) {
 
 	/**
@@ -47410,15 +47404,15 @@
 
 
 /***/ },
-/* 24 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(25);
+	__webpack_require__(21);
 	module.exports = 'ngTouch';
 
 
 /***/ },
-/* 25 */
+/* 21 */
 /***/ function(module, exports) {
 
 	/**
@@ -48052,33 +48046,33 @@
 
 
 /***/ },
-/* 26 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Should already be required, here for clarity
-	__webpack_require__(14);
+	__webpack_require__(10);
 
 	// Load Angular and dependent libs
-	__webpack_require__(16);
-	__webpack_require__(27);
+	__webpack_require__(12);
+	__webpack_require__(23);
 
 	// Now load Angular Material
-	__webpack_require__(29);
+	__webpack_require__(25);
 
 	// Export namespace
 	module.exports = 'ngMaterial';
 
 
 /***/ },
-/* 27 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(28);
+	__webpack_require__(24);
 	module.exports = 'ngAria';
 
 
 /***/ },
-/* 28 */
+/* 24 */
 /***/ function(module, exports) {
 
 	/**
@@ -48482,7 +48476,7 @@
 
 
 /***/ },
-/* 29 */
+/* 25 */
 /***/ function(module, exports) {
 
 	/*!
@@ -71799,7 +71793,7 @@
 	})(window, window.angular);;window.ngMaterial={version:{full: "1.0.0-rc4-master-8051e98"}};
 
 /***/ },
-/* 30 */
+/* 26 */
 /***/ function(module, exports) {
 
 	/**
@@ -76036,14 +76030,14 @@
 	})(window, window.angular);
 
 /***/ },
-/* 31 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(32);
+	module.exports = __webpack_require__(28);
 
 
 /***/ },
-/* 32 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/**
@@ -76800,25 +76794,39 @@
 	  };
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)(module)))
 
 /***/ },
-/* 33 */
+/* 29 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = ui.components([
+	   __webpack_require__(30)
+	]);
+
+/***/ },
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.component({
-	    name: 'uiHeader',
-	    controller: __webpack_require__(34),
-	    template: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./header.tpl.html\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()))
+	    name: 'commonHeader',
+	    controller: __webpack_require__(31),
+	    template: __webpack_require__(32)
 	});
 
 /***/ },
-/* 34 */
+/* 31 */
 /***/ function(module, exports) {
 
 	module.exports = function HeaderCtrl() {
 	    var self = this;
 	};
+
+/***/ },
+/* 32 */
+/***/ function(module, exports) {
+
+	module.exports = "<div id=\"header\" layout=\"row\">\n    <div>\n        <a href=\"\">Login</a>\n    </div>\n</div>";
 
 /***/ }
 /******/ ]);

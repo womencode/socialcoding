@@ -1,5 +1,5 @@
 module.exports = ui.component({
-    name: 'uiHeader',
+    name: 'commonHeader',
     controller: require('./header'),
     template: require('./header.tpl.html')
 });
