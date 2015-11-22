@@ -1,7 +1,7 @@
-<md-dialog aria-label="Signup" ng-cloak>
+<md-dialog flex="90" aria-label="Signup" ng-cloak>
     <form>
         <md-dialog-content>
-            <div class="md-dialog-content">
+            <div class="md-dialog-content" flex>
                 <div layout layout-sm="column">
                     <md-input-container flex>
                         <label>First name</label>
@@ -27,7 +27,21 @@
                     </md-input-container>
                     <md-input-container flex>
                         <label>Confirm</label>
-                        <input ng-model="ctrl.user.password">
+                        <input ng-model="ctrl.confirmPassword">
+                    </md-input-container>
+                </div>
+
+                <div layout layout-sm="column" flex>
+                    <md-input-container flex>
+                        <label>Skills</label>
+                        <md-chips ng-model="ctrl.user.skills"></md-chips>
+                    </md-input-container>
+                </div>
+
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        <label>Languages</label>
+                        <md-chips ng-model="ctrl.user.languages"></md-chips>
                     </md-input-container>
                 </div>
 
