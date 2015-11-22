@@ -49,7 +49,7 @@
 	    name: 'listings',
 	    url: '',
 	    abstract: true,
-	    components: __webpack_require__(44),
+	    components: __webpack_require__(46),
 	    subModules: [
 	        'ngAria',
 	        'ngMaterial',
@@ -62,27 +62,27 @@
 
 /***/ },
 
-/***/ 44:
+/***/ 46:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.components([
-	    __webpack_require__(45)
+	    __webpack_require__(47)
 	]);
 
 /***/ },
 
-/***/ 45:
+/***/ 47:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.component({
 	    name: 'listingsList',
-	    controller: __webpack_require__(46),
-	    template: __webpack_require__(47)
+	    controller: __webpack_require__(48),
+	    template: __webpack_require__(49)
 	})
 
 /***/ },
 
-/***/ 46:
+/***/ 48:
 /***/ function(module, exports) {
 
 	module.exports = function ListCtrl(usersService) {
@@ -208,10 +208,10 @@
 
 /***/ },
 
-/***/ 47:
+/***/ 49:
 /***/ function(module, exports) {
 
-	module.exports = "<div layout=\"column\">\n    <div layout=\"column\" layout-padding style=\"background-color: #abd4bd\">\n        <div>Find a <b>JavaScript</b> mentor...</div>\n    </div>\n\n    <div layout layout-margin layout-padding>\n        <div layout=\"column\" flex=\"25\">\n            <md-whiteframe class=\"md-whiteframe-1dp\" style=\"background-color: white\" flex-sm=\"45\" flex-gt-sm=\"35\" flex-gt-md=\"25\" layout=\"column\" layout-align=\"center center\">\n                <span>filters</span>\n            </md-whiteframe>\n        </div>\n        <md-list flex=\"75\">\n            <md-list-item class=\"md-3-line\" ng-repeat=\"user in ctrl.users\">\n                <img ng-src=\"/img/pics/{{user.id}}.png\" class=\"md-avatar\" alt=\"{{item.who}}\">\n                <div class=\"md-list-item-text\" layout=\"column\">\n                    <h3><a href=\"/profile/?{{user.id}}\">{{ user.firstName }} {{ user.lastName }}</a></h3>\n                    <p><md-chips ng-model=\"user.skills\" readonly=\"true\"></md-chips></p>\n                </div>\n                <md-button class=\"md-raised\">View Profile</md-button>\n                <md-divider ng-if=\"!$last\"></md-divider>\n            </md-list-item>\n        </md-list>\n    </div>\n</div>\n";
+	module.exports = "<div layout=\"column\">\n    <div layout=\"column\" layout-padding style=\"background-color: #abd4bd\">\n        <div>Find a <b>JavaScript</b> mentor...</div>\n    </div>\n\n    <div layout layout-margin layout-padding>\n        <div layout=\"column\" flex=\"25\">\n            <md-whiteframe class=\"md-whiteframe-1dp\" style=\"background-color: white\" flex-sm=\"45\" flex-gt-sm=\"35\" flex-gt-md=\"25\" layout=\"column\" layout-align=\"center center\">\n                <span>filters</span>\n            </md-whiteframe>\n        </div>\n        <md-list flex=\"75\">\n            <md-list-item class=\"md-3-line\" ng-repeat=\"user in ctrl.users\">\n                <img ng-src=\"/img/pics/{{user.id}}.png\" class=\"md-avatar\" alt=\"{{item.who}}\">\n                <div class=\"md-list-item-text\" layout=\"column\">\n                    <h3><a href=\"/profile/?{{user.id}}\">{{ user.firstName }} {{ user.lastName }}</a></h3>\n                    <p><md-chips ng-model=\"user.skills\" readonly=\"true\"></md-chips></p>\n                </div>\n                <a href=\"/profile/?{{user.id}}\"><md-button class=\"md-raised\">View Profile</md-button></a>\n                <md-divider ng-if=\"!$last\"></md-divider>\n            </md-list-item>\n        </md-list>\n    </div>\n</div>\n";
 
 /***/ }
 

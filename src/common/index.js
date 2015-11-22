@@ -8,6 +8,7 @@ module.exports = ui.module({
     components: require('./components'),
     services: require('./services'),
     subModules: [
-        'firebase'
+        'firebase',
+        'ngCookies'
     ]
 })();

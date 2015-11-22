@@ -49,7 +49,7 @@
 	    name: 'profile',
 	    url: '',
 	    abstract: true,
-	    components: __webpack_require__(48),
+	    components: __webpack_require__(50),
 	    subModules: [
 	        'ngAria',
 	        'ngMaterial',
@@ -12438,27 +12438,27 @@
 
 /***/ },
 
-/***/ 48:
+/***/ 50:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.components([
-	   __webpack_require__(49)
+	   __webpack_require__(51)
 	]);
 
 /***/ },
 
-/***/ 49:
+/***/ 51:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.component({
 	    name: 'profile',
-	    controller: __webpack_require__(50),
-	    template: __webpack_require__(51)
+	    controller: __webpack_require__(52),
+	    template: __webpack_require__(53)
 	});
 
 /***/ },
 
-/***/ 50:
+/***/ 52:
 /***/ function(module, exports, __webpack_require__) {
 
 	var _ = __webpack_require__(12);
@@ -12470,23 +12470,15 @@
 
 	    usersService.users.$watch(function () {
 	       ctrl.user = _.find(usersService.users, {id: Number($window.location.search.substr(1))});
-
-	        var user = _.find(usersService.users, { id: 1});
-
-	        user.firstName = 'Alison';
-	        user.lastName = 'Yesilcimen';
-	        user.skills = ['Entrepreneurship', 'Publishing', 'Social Media Marketing'];
-
-	        usersService.users.$save(user);
 	    });
 	};
 
 /***/ },
 
-/***/ 51:
+/***/ 53:
 /***/ function(module, exports) {
 
-	module.exports = "<div layout=\"column\">\n    <div layout style=\"background-color: #abd4bd\">\n        <div layout layout-padding flex>\n            <div>\n                <img ng-src=\"/img/pics/{{ ctrl.user.id }}.png\" class=\"md-avatar\" width=\"200\">\n            </div>\n\n            <div flex layout=\"column\">\n                <h1>{{ ctrl.user.firstName }} {{ ctrl.user.lastName }} <md-icon md-font-library=\"material-icons\">online</md-icon></h1>\n\n                <b>Skills</b>\n                <md-chips ng-model=\"ctrl.user.skills\" readonly=\"true\"></md-chips>\n\n                <b>Languages</b>\n                <md-chips ng-model=\"ctrl.user.languages\" readonly=\"true\"></md-chips>\n\n            </div>\n\n            <md-whiteframe class=\"md-whiteframe-1dp\" style=\"background-color: #ffffff\" layout-paddingx layout=\"column\" layout-align=\"center center\">\n                <div>Likelihood of Reply: 89%</div>\n                <div>Response Time: within a few hours</div>\n\n                <div flex></div>\n\n                <a href=\"/code/?{{ ctrl.random }}\">\n                    <md-button class=\"md-raised md-primary\" style=\"background-color: #e4574b;\">\n                        <md-icon md-font-library=\"material-icons\">call</md-icon>\n                        Get Help from {{ctrl.user.firstName}}\n                    </md-button>\n                </a>\n\n            </md-whiteframe>\n        </div>\n    </div>\n\n    <div layout=\"column\" layout-margin>\n\n        <h3>About Me</h3>\n\n        <md-whiteframe class=\"md-whiteframe-1dp\" style=\"background-color: white\" flex-sm=\"45\" flex-gt-sm=\"35\" flex-gt-md=\"25\" layout=\"column\" layout-padding>\n            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In purus est, maximus eu sagittis sed, malesuada nec diam. Sed nec urna nec nulla consectetur hendrerit quis in est. Pellentesque sed efficitur ligula. In ornare justo nec est pulvinar tempor. Sed lacinia sit amet leo sit amet sagittis. Vivamus a lobortis metus. Cras sit amet egestas metus. Morbi gravida, sem eu faucibus pellentesque, turpis lacus hendrerit quam, vitae lobortis erat lorem porta massa. Nulla dignissim dictum turpis, sit amet accumsan tortor lacinia et. Nulla non eros et leo tincidunt rutrum. Fusce mattis magna non aliquet elementum.</p>\n\n            <p>Pellentesque ac mi velit. Ut cursus, metus nec mollis finibus, ex ipsum gravida mauris, a commodo quam ipsum ut libero. Duis ut purus eget velit suscipit vehicula. Pellentesque vehicula, leo sed aliquam egestas, nisi est aliquam tortor, nec finibus odio orci vitae odio. Proin leo massa, commodo efficitur dolor id, consequat vestibulum elit. Ut elementum dolor a mollis tincidunt. Nam venenatis odio sem, sed congue turpis fermentum et. Quisque vel iaculis sem, ac fringilla felis. Quisque lobortis rutrum est, eu lobortis sapien bibendum fermentum. Nam vitae leo placerat, aliquet nibh sit amet, bibendum eros. Cras viverra purus sit amet justo cursus, quis varius velit tincidunt. Sed eget consequat metus. Nulla maximus ac nisi at eleifend. Vivamus facilisis fringilla feugiat. Maecenas posuere aliquam ipsum eu ornare.</p>\n        </md-whiteframe>\n    </div>\n</div>";
+	module.exports = "<div layout=\"column\">\n    <div layout style=\"background-color: #abd4bd\">\n        <div layout layout-padding flex>\n            <div>\n                <img ng-src=\"/img/pics/{{ ctrl.user.id }}.png\" class=\"md-avatar\" width=\"200\">\n            </div>\n\n            <div flex layout=\"column\">\n                <h1>{{ ctrl.user.firstName }} {{ ctrl.user.lastName }} <md-icon md-font-library=\"material-icons\">online</md-icon></h1>\n\n                <b>Skills</b>\n                <md-chips ng-model=\"ctrl.user.skills\" readonly=\"true\"></md-chips>\n\n                <b>Languages</b>\n                <md-chips ng-model=\"ctrl.user.languages\" readonly=\"true\"></md-chips>\n\n            </div>\n\n            <md-whiteframe class=\"md-whiteframe-1dp\" style=\"background-color: #ffffff\" layout-paddingx layout=\"column\" layout-align=\"center center\">\n                <div>Likelihood of Reply: 89%</div>\n                <div>Response Time: within a few hours</div>\n\n                <div flex></div>\n\n                <a href=\"/code/\">\n                    <md-button class=\"md-raised md-primary\" style=\"background-color: #e4574b;\">\n                        <md-icon md-font-library=\"material-icons\">call</md-icon>\n                        Get Help from {{ctrl.user.firstName}}\n                    </md-button>\n                </a>\n\n            </md-whiteframe>\n        </div>\n    </div>\n\n    <div layout=\"column\" layout-margin>\n\n        <h3>About Me</h3>\n\n        <md-whiteframe class=\"md-whiteframe-1dp\" style=\"background-color: white\" flex-sm=\"45\" flex-gt-sm=\"35\" flex-gt-md=\"25\" layout=\"column\" layout-padding>\n            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In purus est, maximus eu sagittis sed, malesuada nec diam. Sed nec urna nec nulla consectetur hendrerit quis in est. Pellentesque sed efficitur ligula. In ornare justo nec est pulvinar tempor. Sed lacinia sit amet leo sit amet sagittis. Vivamus a lobortis metus. Cras sit amet egestas metus. Morbi gravida, sem eu faucibus pellentesque, turpis lacus hendrerit quam, vitae lobortis erat lorem porta massa. Nulla dignissim dictum turpis, sit amet accumsan tortor lacinia et. Nulla non eros et leo tincidunt rutrum. Fusce mattis magna non aliquet elementum.</p>\n\n            <p>Pellentesque ac mi velit. Ut cursus, metus nec mollis finibus, ex ipsum gravida mauris, a commodo quam ipsum ut libero. Duis ut purus eget velit suscipit vehicula. Pellentesque vehicula, leo sed aliquam egestas, nisi est aliquam tortor, nec finibus odio orci vitae odio. Proin leo massa, commodo efficitur dolor id, consequat vestibulum elit. Ut elementum dolor a mollis tincidunt. Nam venenatis odio sem, sed congue turpis fermentum et. Quisque vel iaculis sem, ac fringilla felis. Quisque lobortis rutrum est, eu lobortis sapien bibendum fermentum. Nam vitae leo placerat, aliquet nibh sit amet, bibendum eros. Cras viverra purus sit amet justo cursus, quis varius velit tincidunt. Sed eget consequat metus. Nulla maximus ac nisi at eleifend. Vivamus facilisis fringilla feugiat. Maecenas posuere aliquam ipsum eu ornare.</p>\n        </md-whiteframe>\n    </div>\n</div>";
 
 /***/ }
 

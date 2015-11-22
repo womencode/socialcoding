@@ -1,4 +1,4 @@
-module.exports = function SignupDialogCtrl($mdDialog, $window, isMentor, usersService) {
+module.exports = function SignupDialogCtrl($mdDialog, $window, $cookies, isMentor, usersService) {
     var ctrl = this;
 
     ctrl.user = {
@@ -11,6 +11,8 @@ module.exports = function SignupDialogCtrl($mdDialog, $window, isMentor, usersSe
     ctrl.cancel = cancel;
 
     function signup() {
+        $cookies.put('login', ctrl.user);
+
         //ctrl.user.id = usersService.users.length + 1;
 
         //usersService.users.$add(ctrl.user).then(function () {

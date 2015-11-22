@@ -47,14 +47,15 @@
 	__webpack_require__(8);
 	__webpack_require__(11);
 
-	window.ui = __webpack_require__(33);
+	window.ui = __webpack_require__(35);
 
 	module.exports = ui.module({
 	    name: 'common',
-	    components: __webpack_require__(35),
-	    services: __webpack_require__(41),
+	    components: __webpack_require__(37),
+	    services: __webpack_require__(43),
 	    subModules: [
-	        'firebase'
+	        'firebase',
+	        'ngCookies'
 	    ]
 	})();
 
@@ -361,12 +362,13 @@
 	__webpack_require__(20);
 	__webpack_require__(22);
 	__webpack_require__(24);
+	__webpack_require__(26);
 
 	// angular extentions
-	__webpack_require__(26);
-	__webpack_require__(30);
+	__webpack_require__(28);
+	__webpack_require__(32);
 	__webpack_require__(2);
-	__webpack_require__(31);
+	__webpack_require__(33);
 
 /***/ },
 /* 12 */
@@ -45606,11 +45608,346 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(19);
-	module.exports = 'ngMessages';
+	module.exports = 'ngCookies';
 
 
 /***/ },
 /* 19 */
+/***/ function(module, exports) {
+
+	/**
+	 * @license AngularJS v1.4.8
+	 * (c) 2010-2015 Google, Inc. http://angularjs.org
+	 * License: MIT
+	 */
+	(function(window, angular, undefined) {'use strict';
+
+	/**
+	 * @ngdoc module
+	 * @name ngCookies
+	 * @description
+	 *
+	 * # ngCookies
+	 *
+	 * The `ngCookies` module provides a convenient wrapper for reading and writing browser cookies.
+	 *
+	 *
+	 * <div doc-module-components="ngCookies"></div>
+	 *
+	 * See {@link ngCookies.$cookies `$cookies`} for usage.
+	 */
+
+
+	angular.module('ngCookies', ['ng']).
+	  /**
+	   * @ngdoc provider
+	   * @name $cookiesProvider
+	   * @description
+	   * Use `$cookiesProvider` to change the default behavior of the {@link ngCookies.$cookies $cookies} service.
+	   * */
+	   provider('$cookies', [function $CookiesProvider() {
+	    /**
+	     * @ngdoc property
+	     * @name $cookiesProvider#defaults
+	     * @description
+	     *
+	     * Object containing default options to pass when setting cookies.
+	     *
+	     * The object may have following properties:
+	     *
+	     * - **path** - `{string}` - The cookie will be available only for this path and its
+	     *   sub-paths. By default, this would be the URL that appears in your base tag.
+	     * - **domain** - `{string}` - The cookie will be available only for this domain and
+	     *   its sub-domains. For obvious security reasons the user agent will not accept the
+	     *   cookie if the current domain is not a sub domain or equals to the requested domain.
+	     * - **expires** - `{string|Date}` - String of the form "Wdy, DD Mon YYYY HH:MM:SS GMT"
+	     *   or a Date object indicating the exact date/time this cookie will expire.
+	     * - **secure** - `{boolean}` - The cookie will be available only in secured connection.
+	     *
+	     * Note: by default the address that appears in your `<base>` tag will be used as path.
+	     * This is important so that cookies will be visible for all routes in case html5mode is enabled
+	     *
+	     **/
+	    var defaults = this.defaults = {};
+
+	    function calcOptions(options) {
+	      return options ? angular.extend({}, defaults, options) : defaults;
+	    }
+
+	    /**
+	     * @ngdoc service
+	     * @name $cookies
+	     *
+	     * @description
+	     * Provides read/write access to browser's cookies.
+	     *
+	     * <div class="alert alert-info">
+	     * Up until Angular 1.3, `$cookies` exposed properties that represented the
+	     * current browser cookie values. In version 1.4, this behavior has changed, and
+	     * `$cookies` now provides a standard api of getters, setters etc.
+	     * </div>
+	     *
+	     * Requires the {@link ngCookies `ngCookies`} module to be installed.
+	     *
+	     * @example
+	     *
+	     * ```js
+	     * angular.module('cookiesExample', ['ngCookies'])
+	     *   .controller('ExampleController', ['$cookies', function($cookies) {
+	     *     // Retrieving a cookie
+	     *     var favoriteCookie = $cookies.get('myFavorite');
+	     *     // Setting a cookie
+	     *     $cookies.put('myFavorite', 'oatmeal');
+	     *   }]);
+	     * ```
+	     */
+	    this.$get = ['$$cookieReader', '$$cookieWriter', function($$cookieReader, $$cookieWriter) {
+	      return {
+	        /**
+	         * @ngdoc method
+	         * @name $cookies#get
+	         *
+	         * @description
+	         * Returns the value of given cookie key
+	         *
+	         * @param {string} key Id to use for lookup.
+	         * @returns {string} Raw cookie value.
+	         */
+	        get: function(key) {
+	          return $$cookieReader()[key];
+	        },
+
+	        /**
+	         * @ngdoc method
+	         * @name $cookies#getObject
+	         *
+	         * @description
+	         * Returns the deserialized value of given cookie key
+	         *
+	         * @param {string} key Id to use for lookup.
+	         * @returns {Object} Deserialized cookie value.
+	         */
+	        getObject: function(key) {
+	          var value = this.get(key);
+	          return value ? angular.fromJson(value) : value;
+	        },
+
+	        /**
+	         * @ngdoc method
+	         * @name $cookies#getAll
+	         *
+	         * @description
+	         * Returns a key value object with all the cookies
+	         *
+	         * @returns {Object} All cookies
+	         */
+	        getAll: function() {
+	          return $$cookieReader();
+	        },
+
+	        /**
+	         * @ngdoc method
+	         * @name $cookies#put
+	         *
+	         * @description
+	         * Sets a value for given cookie key
+	         *
+	         * @param {string} key Id for the `value`.
+	         * @param {string} value Raw value to be stored.
+	         * @param {Object=} options Options object.
+	         *    See {@link ngCookies.$cookiesProvider#defaults $cookiesProvider.defaults}
+	         */
+	        put: function(key, value, options) {
+	          $$cookieWriter(key, value, calcOptions(options));
+	        },
+
+	        /**
+	         * @ngdoc method
+	         * @name $cookies#putObject
+	         *
+	         * @description
+	         * Serializes and sets a value for given cookie key
+	         *
+	         * @param {string} key Id for the `value`.
+	         * @param {Object} value Value to be stored.
+	         * @param {Object=} options Options object.
+	         *    See {@link ngCookies.$cookiesProvider#defaults $cookiesProvider.defaults}
+	         */
+	        putObject: function(key, value, options) {
+	          this.put(key, angular.toJson(value), options);
+	        },
+
+	        /**
+	         * @ngdoc method
+	         * @name $cookies#remove
+	         *
+	         * @description
+	         * Remove given cookie
+	         *
+	         * @param {string} key Id of the key-value pair to delete.
+	         * @param {Object=} options Options object.
+	         *    See {@link ngCookies.$cookiesProvider#defaults $cookiesProvider.defaults}
+	         */
+	        remove: function(key, options) {
+	          $$cookieWriter(key, undefined, calcOptions(options));
+	        }
+	      };
+	    }];
+	  }]);
+
+	angular.module('ngCookies').
+	/**
+	 * @ngdoc service
+	 * @name $cookieStore
+	 * @deprecated
+	 * @requires $cookies
+	 *
+	 * @description
+	 * Provides a key-value (string-object) storage, that is backed by session cookies.
+	 * Objects put or retrieved from this storage are automatically serialized or
+	 * deserialized by angular's toJson/fromJson.
+	 *
+	 * Requires the {@link ngCookies `ngCookies`} module to be installed.
+	 *
+	 * <div class="alert alert-danger">
+	 * **Note:** The $cookieStore service is **deprecated**.
+	 * Please use the {@link ngCookies.$cookies `$cookies`} service instead.
+	 * </div>
+	 *
+	 * @example
+	 *
+	 * ```js
+	 * angular.module('cookieStoreExample', ['ngCookies'])
+	 *   .controller('ExampleController', ['$cookieStore', function($cookieStore) {
+	 *     // Put cookie
+	 *     $cookieStore.put('myFavorite','oatmeal');
+	 *     // Get cookie
+	 *     var favoriteCookie = $cookieStore.get('myFavorite');
+	 *     // Removing a cookie
+	 *     $cookieStore.remove('myFavorite');
+	 *   }]);
+	 * ```
+	 */
+	 factory('$cookieStore', ['$cookies', function($cookies) {
+
+	    return {
+	      /**
+	       * @ngdoc method
+	       * @name $cookieStore#get
+	       *
+	       * @description
+	       * Returns the value of given cookie key
+	       *
+	       * @param {string} key Id to use for lookup.
+	       * @returns {Object} Deserialized cookie value, undefined if the cookie does not exist.
+	       */
+	      get: function(key) {
+	        return $cookies.getObject(key);
+	      },
+
+	      /**
+	       * @ngdoc method
+	       * @name $cookieStore#put
+	       *
+	       * @description
+	       * Sets a value for given cookie key
+	       *
+	       * @param {string} key Id for the `value`.
+	       * @param {Object} value Value to be stored.
+	       */
+	      put: function(key, value) {
+	        $cookies.putObject(key, value);
+	      },
+
+	      /**
+	       * @ngdoc method
+	       * @name $cookieStore#remove
+	       *
+	       * @description
+	       * Remove given cookie
+	       *
+	       * @param {string} key Id of the key-value pair to delete.
+	       */
+	      remove: function(key) {
+	        $cookies.remove(key);
+	      }
+	    };
+
+	  }]);
+
+	/**
+	 * @name $$cookieWriter
+	 * @requires $document
+	 *
+	 * @description
+	 * This is a private service for writing cookies
+	 *
+	 * @param {string} name Cookie name
+	 * @param {string=} value Cookie value (if undefined, cookie will be deleted)
+	 * @param {Object=} options Object with options that need to be stored for the cookie.
+	 */
+	function $$CookieWriter($document, $log, $browser) {
+	  var cookiePath = $browser.baseHref();
+	  var rawDocument = $document[0];
+
+	  function buildCookieString(name, value, options) {
+	    var path, expires;
+	    options = options || {};
+	    expires = options.expires;
+	    path = angular.isDefined(options.path) ? options.path : cookiePath;
+	    if (angular.isUndefined(value)) {
+	      expires = 'Thu, 01 Jan 1970 00:00:00 GMT';
+	      value = '';
+	    }
+	    if (angular.isString(expires)) {
+	      expires = new Date(expires);
+	    }
+
+	    var str = encodeURIComponent(name) + '=' + encodeURIComponent(value);
+	    str += path ? ';path=' + path : '';
+	    str += options.domain ? ';domain=' + options.domain : '';
+	    str += expires ? ';expires=' + expires.toUTCString() : '';
+	    str += options.secure ? ';secure' : '';
+
+	    // per http://www.ietf.org/rfc/rfc2109.txt browser must allow at minimum:
+	    // - 300 cookies
+	    // - 20 cookies per unique domain
+	    // - 4096 bytes per cookie
+	    var cookieLength = str.length + 1;
+	    if (cookieLength > 4096) {
+	      $log.warn("Cookie '" + name +
+	        "' possibly not set or overflowed because it was too large (" +
+	        cookieLength + " > 4096 bytes)!");
+	    }
+
+	    return str;
+	  }
+
+	  return function(name, value, options) {
+	    rawDocument.cookie = buildCookieString(name, value, options);
+	  };
+	}
+
+	$$CookieWriter.$inject = ['$document', '$log', '$browser'];
+
+	angular.module('ngCookies').provider('$$cookieWriter', function $$CookieWriterProvider() {
+	  this.$get = $$CookieWriter;
+	});
+
+
+	})(window, window.angular);
+
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(21);
+	module.exports = 'ngMessages';
+
+
+/***/ },
+/* 21 */
 /***/ function(module, exports) {
 
 	/**
@@ -46301,15 +46638,15 @@
 
 
 /***/ },
-/* 20 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(21);
+	__webpack_require__(23);
 	module.exports = 'ngResource';
 
 
 /***/ },
-/* 21 */
+/* 23 */
 /***/ function(module, exports) {
 
 	/**
@@ -46990,15 +47327,15 @@
 
 
 /***/ },
-/* 22 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(23);
+	__webpack_require__(25);
 	module.exports = 'ngSanitize';
 
 
 /***/ },
-/* 23 */
+/* 25 */
 /***/ function(module, exports) {
 
 	/**
@@ -47687,15 +48024,15 @@
 
 
 /***/ },
-/* 24 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(25);
+	__webpack_require__(27);
 	module.exports = 'ngTouch';
 
 
 /***/ },
-/* 25 */
+/* 27 */
 /***/ function(module, exports) {
 
 	/**
@@ -48329,7 +48666,7 @@
 
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Should already be required, here for clarity
@@ -48337,25 +48674,25 @@
 
 	// Load Angular and dependent libs
 	__webpack_require__(16);
-	__webpack_require__(27);
+	__webpack_require__(29);
 
 	// Now load Angular Material
-	__webpack_require__(29);
+	__webpack_require__(31);
 
 	// Export namespace
 	module.exports = 'ngMaterial';
 
 
 /***/ },
-/* 27 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(28);
+	__webpack_require__(30);
 	module.exports = 'ngAria';
 
 
 /***/ },
-/* 28 */
+/* 30 */
 /***/ function(module, exports) {
 
 	/**
@@ -48759,7 +49096,7 @@
 
 
 /***/ },
-/* 29 */
+/* 31 */
 /***/ function(module, exports) {
 
 	/*!
@@ -72076,7 +72413,7 @@
 	})(window, window.angular);;window.ngMaterial={version:{full: "1.0.0-rc4-master-8051e98"}};
 
 /***/ },
-/* 30 */
+/* 32 */
 /***/ function(module, exports) {
 
 	/**
@@ -76313,15 +76650,15 @@
 	})(window, window.angular);
 
 /***/ },
-/* 31 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(32);
+	__webpack_require__(34);
 	module.exports = 'firebase';
 
 
 /***/ },
-/* 32 */
+/* 34 */
 /***/ function(module, exports) {
 
 	/*!
@@ -78604,14 +78941,14 @@
 
 
 /***/ },
-/* 33 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(34);
+	module.exports = __webpack_require__(36);
 
 
 /***/ },
-/* 34 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/**
@@ -79371,41 +79708,41 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)(module)))
 
 /***/ },
-/* 35 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.components([
-	   __webpack_require__(36),
-	   __webpack_require__(38)
+	   __webpack_require__(38),
+	   __webpack_require__(40)
 	]);
-
-/***/ },
-/* 36 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = ui.component({
-	    name: 'commonFooter',
-	    template: __webpack_require__(37)
-	})
-
-/***/ },
-/* 37 */
-/***/ function(module, exports) {
-
-	module.exports = "<div style=\"background-color: #3d675f; min-height: 200px\">Footer</div>";
 
 /***/ },
 /* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.component({
-	    name: 'commonHeader',
-	    controller: __webpack_require__(39),
-	    template: __webpack_require__(40)
-	});
+	    name: 'commonFooter',
+	    template: __webpack_require__(39)
+	})
 
 /***/ },
 /* 39 */
+/***/ function(module, exports) {
+
+	module.exports = "<div style=\"background-color: #3d675f; min-height: 200px\">Footer</div>";
+
+/***/ },
+/* 40 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = ui.component({
+	    name: 'commonHeader',
+	    controller: __webpack_require__(41),
+	    template: __webpack_require__(42)
+	});
+
+/***/ },
+/* 41 */
 /***/ function(module, exports) {
 
 	module.exports = function HeaderCtrl() {
@@ -79413,30 +79750,30 @@
 	};
 
 /***/ },
-/* 40 */
+/* 42 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-toolbar style=\"background-color: #3d675f\">\n    <div class=\"md-toolbar-tools\">\n        <span><a href=\"/\"><b>Code</b>Socially</a></span>\n\n        <span flex></span>\n\n        <md-button>\n            <md-button>\n                <md-icon md-font-library=\"material-icons\">person</md-icon>\n                Login\n            </md-button>\n        </md-button>\n    </div>\n</md-toolbar>";
 
 /***/ },
-/* 41 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.services([
-	    __webpack_require__(42)
+	    __webpack_require__(44)
 	]);
 
 /***/ },
-/* 42 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.service({
 	    name: 'usersService',
-	    service: __webpack_require__(43)
+	    service: __webpack_require__(45)
 	});
 
 /***/ },
-/* 43 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Firebase = __webpack_require__(2);
