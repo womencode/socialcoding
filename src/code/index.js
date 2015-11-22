@@ -1,5 +1,8 @@
 
-require("firebase")
+require("firebase");
+var FirepadUserList = require("./firepad-userlist.js")
+require("./index.less");
+require("./firepad-userlist.less")
 
 function init() {
   //// Initialize Firebase.
@@ -30,7 +33,7 @@ function init() {
       //firepad.setText('Check out the user list to the left!');
     }  
   });
-  
+
 }
 
 init();
