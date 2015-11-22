@@ -33,6 +33,11 @@
     "angular-touch": "1.4.7",
     "angular-ui-router": "0.2.13",
     "express": "^4.13.3",
-    "lodash": "^3.10.1"
+    "firebase": "^2.3.2",
+    "firepad": "^1.2.0",
+    "fs": "0.0.2",
+    "lodash": "^3.10.1",
+    "style": "0.0.3",
+    "style-loader": "^0.13.0"
   }
 }
