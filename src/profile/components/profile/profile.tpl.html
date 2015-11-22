@@ -1,0 +1,30 @@
+<div layout="column" layout-padding>
+    <h1>Profile</h1>
+
+    <div>
+        <img ng-src="/img/ryan.jpg" class="md-avatar" width="200">
+        <a href="/code/">
+            <md-button class="md-raised md-primary">
+                <md-icon md-font-library="material-icons">call</md-icon>
+                Get Help from {{ctrl.user.firstName}}
+            </md-button>
+        </a>
+    </div>
+
+    <h3>About Me</h3>
+
+    <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout>
+        <span>Text goes here</span>
+    </md-whiteframe>
+
+    <h3>Skills</h3>
+
+    <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout>
+        <md-list>
+            <md-list-item ng-repeat="skill in ctrl.user.skills">
+                <h4>{{skill.name}}</h4>
+                <p>{{skil.desc}}</p>
+            </md-list-item>
+        </md-list>
+    </md-whiteframe>
+</div>
