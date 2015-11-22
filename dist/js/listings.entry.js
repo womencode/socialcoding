@@ -98,7 +98,63 @@
 	            tag: 'React.js/flux enthusiast, author of react-google-maps',
 	            desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
 	            skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
-	        }
+	        },
+	        {
+	            id: 1,
+	            firstName: 'Ryan',
+	            lastName: 'Campbell',
+	            tag: 'React.js/flux enthusiast, author of react-google-maps',
+	            desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
+	            skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
+	        },
+	        {
+	            id: 1,
+	            firstName: 'Ryan',
+	            lastName: 'Campbell',
+	            tag: 'React.js/flux enthusiast, author of react-google-maps',
+	            desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
+	            skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
+	        },
+	        {
+	            id: 1,
+	            firstName: 'Ryan',
+	            lastName: 'Campbell',
+	            tag: 'React.js/flux enthusiast, author of react-google-maps',
+	            desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
+	            skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
+	        },{
+	            id: 1,
+	            firstName: 'Ryan',
+	            lastName: 'Campbell',
+	            tag: 'React.js/flux enthusiast, author of react-google-maps',
+	            desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
+	            skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
+	        },
+	        {
+	            id: 1,
+	            firstName: 'Ryan',
+	            lastName: 'Campbell',
+	            tag: 'React.js/flux enthusiast, author of react-google-maps',
+	            desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
+	            skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
+	        },{
+	            id: 1,
+	            firstName: 'Ryan',
+	            lastName: 'Campbell',
+	            tag: 'React.js/flux enthusiast, author of react-google-maps',
+	            desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
+	            skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
+	        },
+	        {
+	            id: 1,
+	            firstName: 'Ryan',
+	            lastName: 'Campbell',
+	            tag: 'React.js/flux enthusiast, author of react-google-maps',
+	            desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
+	            skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
+	        },
+
+
 	    ];
 
 
@@ -153,7 +209,7 @@
 /***/ 50:
 /***/ function(module, exports) {
 
-	module.exports = "<div>\n    <md-list>\n        <md-list-item class=\"md-3-line\" ng-repeat=\"user in ctrl.users\">\n            <img ng-src=\"{{user.face}}?{{$index}}\" class=\"md-avatar\" alt=\"{{item.who}}\">\n            <div class=\"md-list-item-text\" layout=\"column\">\n                <h3><a href=\"/profile/#id={{user.id}}\">{{ user.firstName }} {{ user.lastName }}</a></h3>\n                <h4>{{ user.tag }}</h4>\n                <p>{{ user.desc }}</p>\n            </div>\n        </md-list-item>\n    </md-list>\n</div>";
+	module.exports = "<div layout=\"column\">\n    <div layout=\"column\" layout-padding style=\"background-color: #abd4bd\">\n        <div>Find a <b>JavaScript</b> mentor...</div>\n    </div>\n\n    <div layout layout-margin layout-padding>\n        <div layout=\"column\" flex=\"25\">\n            <md-whiteframe class=\"md-whiteframe-1dp\" flex-sm=\"45\" flex-gt-sm=\"35\" flex-gt-md=\"25\" layout=\"column\" layout-align=\"center center\">\n                <span>.md-whiteframe-1dp</span>\n                <span>.md-whiteframe-1dp</span>\n                <span>.md-whiteframe-1dp</span>\n                <span>.md-whiteframe-1dp</span>\n            </md-whiteframe>\n        </div>\n        <md-list flex=\"75\">\n            <md-list-item class=\"md-3-line\" ng-repeat=\"user in ctrl.users\">\n                <img ng-src=\"{{user.face}}?{{$index}}\" class=\"md-avatar\" alt=\"{{item.who}}\">\n                <div class=\"md-list-item-text\" layout=\"column\">\n                    <h3><a href=\"/profile/#id={{user.id}}\">{{ user.firstName }} {{ user.lastName }}</a></h3>\n                    <h4>{{ user.tag }}</h4>\n                    <p>{{ user.desc }}</p>\n                </div>\n                <md-button class=\"md-raised\">View Profile</md-button>\n                <md-divider ng-if=\"!$last\"></md-divider>\n            </md-list-item>\n        </md-list>\n    </div>\n</div>\n";
 
 /***/ }
 

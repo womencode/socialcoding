@@ -9217,4 +9217,9 @@ md-tooltip {
 @media screen and (-ms-high-contrast: active) {
   md-whiteframe {
     border: 1px solid #fff; } }
-
+body {
+  background-color: #f1f5dc;
+}
+.md-primary {
+  background-color: #e4574b;
+}

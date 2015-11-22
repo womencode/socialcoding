@@ -76831,7 +76831,7 @@
 /* 36 */
 /***/ function(module, exports) {
 
-	module.exports = "<md-toolbar>\n    <div class=\"md-toolbar-tools\">\n        <span>Code Socially</span>\n\n        <span flex></span>\n\n        <md-button>\n            <md-button>\n                <md-icon md-font-library=\"material-icons\">person</md-icon>\n                Login\n            </md-button>\n        </md-button>\n    </div>\n</md-toolbar>";
+	module.exports = "<md-toolbar style=\"background-color: #3d675f\">\n    <div class=\"md-toolbar-tools\">\n        <span><b>Code</b>Socially</span>\n\n        <span flex></span>\n\n        <md-button>\n            <md-button>\n                <md-icon md-font-library=\"material-icons\">person</md-icon>\n                Login\n            </md-button>\n        </md-button>\n    </div>\n</md-toolbar>";
 
 /***/ },
 /* 37 */,
@@ -76854,7 +76854,7 @@
 /* 46 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>Footer</div>";
+	module.exports = "<div style=\"background-color: #3d675f; min-height: 200px\">Footer</div>";
 
 /***/ }
 /******/ ]);

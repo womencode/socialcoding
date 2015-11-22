@@ -1,30 +1,48 @@
-<div layout="column" layout-padding>
-    <h1>Profile</h1>
+<div layout="column">
+    <div layout style="background-color: #abd4bd">
+        <div layout layout-padding flex>
+            <div>
+                <img ng-src="/img/ryan.jpg" class="md-avatar" width="200">
+            </div>
 
-    <div>
-        <img ng-src="/img/ryan.jpg" class="md-avatar" width="200">
-        <a href="/code/">
-            <md-button class="md-raised md-primary">
-                <md-icon md-font-library="material-icons">call</md-icon>
-                Get Help from {{ctrl.user.firstName}}
-            </md-button>
-        </a>
+            <div flex>
+                <h1>{{ ctrl.user.firstName }} {{ ctrl.user.lastName }} <md-icon md-font-library="material-icons">online</md-icon></h1>
+            </div>
+
+            <md-whiteframe class="md-whiteframe-1dp" style="background-color: #ffffff" layout-paddingx layout="column" layout-align="center center">
+                <div>Likelihood of Reply: 89%</div>
+                <div>Response Time: within a few hours</div>
+
+                <div flex></div>
+
+                <a href="/code/">
+                    <md-button class="md-raised md-primary" style="background-color: #e4574b;">
+                        <md-icon md-font-library="material-icons">call</md-icon>
+                        Get Help from {{ctrl.user.firstName}}
+                    </md-button>
+                </a>
+
+            </md-whiteframe>
+        </div>
     </div>
 
-    <h3>About Me</h3>
+    <div layout="column" layout-margin>
 
-    <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout>
-        <span>Text goes here</span>
-    </md-whiteframe>
+        <h3>About Me</h3>
 
-    <h3>Skills</h3>
+        <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-padding>
+            <span>Text goes here</span>
+        </md-whiteframe>
 
-    <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout>
-        <md-list>
-            <md-list-item ng-repeat="skill in ctrl.user.skills">
-                <h4>{{skill.name}}</h4>
-                <p>{{skil.desc}}</p>
-            </md-list-item>
-        </md-list>
-    </md-whiteframe>
+        <h3>Skills</h3>
+
+        <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-padding>
+            <md-list>
+                <md-list-item ng-repeat="skill in ctrl.user.skills">
+                    <h4>{{skill.name}}</h4>
+                    <p>{{skil.desc}}</p>
+                </md-list-item>
+            </md-list>
+        </md-whiteframe>
+    </div>
 </div>
