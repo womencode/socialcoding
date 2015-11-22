@@ -22,7 +22,7 @@
 
                 <div flex></div>
 
-                <a href="/code/">
+                <a href="/code/?{{ ctrl.random }}">
                     <md-button class="md-raised md-primary" style="background-color: #e4574b;">
                         <md-icon md-font-library="material-icons">call</md-icon>
                         Get Help from {{ctrl.user.firstName}}
@@ -37,8 +37,10 @@
 
         <h3>About Me</h3>
 
-        <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-padding>
-            <span>{{ ctrl.user.aboutMe }}</span>
+        <md-whiteframe class="md-whiteframe-1dp" style="background-color: white" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="column" layout-padding>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In purus est, maximus eu sagittis sed, malesuada nec diam. Sed nec urna nec nulla consectetur hendrerit quis in est. Pellentesque sed efficitur ligula. In ornare justo nec est pulvinar tempor. Sed lacinia sit amet leo sit amet sagittis. Vivamus a lobortis metus. Cras sit amet egestas metus. Morbi gravida, sem eu faucibus pellentesque, turpis lacus hendrerit quam, vitae lobortis erat lorem porta massa. Nulla dignissim dictum turpis, sit amet accumsan tortor lacinia et. Nulla non eros et leo tincidunt rutrum. Fusce mattis magna non aliquet elementum.</p>
+
+            <p>Pellentesque ac mi velit. Ut cursus, metus nec mollis finibus, ex ipsum gravida mauris, a commodo quam ipsum ut libero. Duis ut purus eget velit suscipit vehicula. Pellentesque vehicula, leo sed aliquam egestas, nisi est aliquam tortor, nec finibus odio orci vitae odio. Proin leo massa, commodo efficitur dolor id, consequat vestibulum elit. Ut elementum dolor a mollis tincidunt. Nam venenatis odio sem, sed congue turpis fermentum et. Quisque vel iaculis sem, ac fringilla felis. Quisque lobortis rutrum est, eu lobortis sapien bibendum fermentum. Nam vitae leo placerat, aliquet nibh sit amet, bibendum eros. Cras viverra purus sit amet justo cursus, quis varius velit tincidunt. Sed eget consequat metus. Nulla maximus ac nisi at eleifend. Vivamus facilisis fringilla feugiat. Maecenas posuere aliquam ipsum eu ornare.</p>
         </md-whiteframe>
     </div>
 </div>
