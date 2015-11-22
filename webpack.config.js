@@ -5,6 +5,7 @@ module.exports = {
     entry: {
         root: "./index.js",
         code: "./code/index.js",
+        common: "./common/index.js",
         listings: "./listings/index.js",
         profile: "./profile/index.js",
         signup: "./signup/index.js"
@@ -15,7 +16,8 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.css$/, loader: "style!css" }
+            { test: /\.css$/, loader: "style!css" },
+            { test: /\.less$/, loader: "style!css!less" }
         ]
     }
 };

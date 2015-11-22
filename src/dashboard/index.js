@@ -1,5 +1,5 @@
 module.exports = ui.module({
-    name: 'signup',
+    name: 'dashboard',
     url: '',
     abstract: true,
     subModules: [
