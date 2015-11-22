@@ -143,7 +143,7 @@
 /***/ 44:
 /***/ function(module, exports) {
 
-	module.exports = "<div layout layout-align=\"center\">\n    <md-button class=\"md-raised\" ng-click=\"ctrl.openDialog('student')\">I'm a Student</md-button>\n    <md-button class=\"md-raised\" ng-click=\"ctrl.openDialog('mentor')\">I'm a Mentor</md-button>\n</div>";
+	module.exports = "<div layout layout-align=\"center\">\n    <md-whiteframe class=\"md-whiteframe-1dp\" flex layout layout-align=\"center center\">\n        <md-button class=\"md-raised\" ng-click=\"ctrl.openDialog('student')\">I'm a Student</md-button>\n        OR\n        <md-button class=\"md-raised\" ng-click=\"ctrl.openDialog('mentor')\">I'm a Mentor</md-button>\n    </md-whiteframe>\n\n\n</div>";
 
 /***/ }
 

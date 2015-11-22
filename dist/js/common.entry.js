@@ -76831,7 +76831,7 @@
 /* 36 */
 /***/ function(module, exports) {
 
-	module.exports = "<div id=\"header\" layout=\"row\">\n    <div>\n        <a href=\"\">Login</a>\n    </div>\n</div>";
+	module.exports = "<md-toolbar>\n    <div class=\"md-toolbar-tools\">\n        <span>Code Socially</span>\n\n        <span flex></span>\n\n        <md-button>\n            <md-button>\n                <md-icon md-font-library=\"material-icons\">person</md-icon>\n                Login\n            </md-button>\n        </md-button>\n    </div>\n</md-toolbar>";
 
 /***/ },
 /* 37 */,
