@@ -51,9 +51,7 @@
 
 	module.exports = ui.module({
 	    name: 'common',
-	    subModules: [
-	        __webpack_require__(29)
-	    ]
+	    components: __webpack_require__(29)
 	})();
 
 /***/ },
@@ -76802,14 +76800,22 @@
 /* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = ui.component({
-	    name: 'uiHeader',
-	    controller: __webpack_require__(30),
-	    template: __webpack_require__(31)
-	});
+	module.exports = ui.components([
+	   __webpack_require__(30)
+	]);
 
 /***/ },
 /* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = ui.component({
+	    name: 'commonHeader',
+	    controller: __webpack_require__(31),
+	    template: __webpack_require__(32)
+	});
+
+/***/ },
+/* 31 */
 /***/ function(module, exports) {
 
 	module.exports = function HeaderCtrl() {
@@ -76817,10 +76823,10 @@
 	};
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports) {
 
-	module.exports = "<div id=\"header\" layout=\"row\">\n    <div><img src=\"/img/codesociallylogo.png\" width=\"400\"></div>\n    <div>\n        <a href=\"\">Login</a>\n    </div>\n</div>";
+	module.exports = "<div id=\"header\" layout=\"row\">\n    <div>\n        <a href=\"\">Login</a>\n    </div>\n</div>";
 
 /***/ }
 /******/ ]);
