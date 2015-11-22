@@ -1,9 +1,11 @@
-module.exports = function ListCtrl() {
+module.exports = function ListCtrl(usersService) {
     var ctrl = this;
+
+    ctrl.users = usersService.users;
 
     var imagePath = 'img/list/60.jpeg';
 
-    ctrl.users = [
+    /*ctrl.users = [
         {
             id: 1,
             firstName: 'Ryan',
@@ -114,5 +116,5 @@ module.exports = function ListCtrl() {
             when: '3:08PM',
             notes: " I'll be in your neighborhood doing errands"
         }
-    ];
+    ];*/
 };

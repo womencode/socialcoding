@@ -49,7 +49,7 @@
 	    name: 'listings',
 	    url: '',
 	    abstract: true,
-	    components: __webpack_require__(39),
+	    components: __webpack_require__(44),
 	    subModules: [
 	        'ngAria',
 	        'ngMaterial',
@@ -62,35 +62,37 @@
 
 /***/ },
 
-/***/ 39:
+/***/ 44:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.components([
-	    __webpack_require__(40)
+	    __webpack_require__(45)
 	]);
 
 /***/ },
 
-/***/ 40:
+/***/ 45:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.component({
 	    name: 'listingsList',
-	    controller: __webpack_require__(41),
-	    template: __webpack_require__(42)
+	    controller: __webpack_require__(46),
+	    template: __webpack_require__(47)
 	})
 
 /***/ },
 
-/***/ 41:
+/***/ 46:
 /***/ function(module, exports) {
 
-	module.exports = function ListCtrl() {
+	module.exports = function ListCtrl(usersService) {
 	    var ctrl = this;
+
+	    ctrl.users = usersService.users;
 
 	    var imagePath = 'img/list/60.jpeg';
 
-	    ctrl.users = [
+	    /*ctrl.users = [
 	        {
 	            id: 1,
 	            firstName: 'Ryan',
@@ -201,15 +203,15 @@
 	            when: '3:08PM',
 	            notes: " I'll be in your neighborhood doing errands"
 	        }
-	    ];
+	    ];*/
 	};
 
 /***/ },
 
-/***/ 42:
+/***/ 47:
 /***/ function(module, exports) {
 
-	module.exports = "<div layout=\"column\">\n    <div layout=\"column\" layout-padding style=\"background-color: #abd4bd\">\n        <div>Find a <b>JavaScript</b> mentor...</div>\n    </div>\n\n    <div layout layout-margin layout-padding>\n        <div layout=\"column\" flex=\"25\">\n            <md-whiteframe class=\"md-whiteframe-1dp\" flex-sm=\"45\" flex-gt-sm=\"35\" flex-gt-md=\"25\" layout=\"column\" layout-align=\"center center\">\n                <span>.md-whiteframe-1dp</span>\n                <span>.md-whiteframe-1dp</span>\n                <span>.md-whiteframe-1dp</span>\n                <span>.md-whiteframe-1dp</span>\n            </md-whiteframe>\n        </div>\n        <md-list flex=\"75\">\n            <md-list-item class=\"md-3-line\" ng-repeat=\"user in ctrl.users\">\n                <img ng-src=\"{{user.face}}?{{$index}}\" class=\"md-avatar\" alt=\"{{item.who}}\">\n                <div class=\"md-list-item-text\" layout=\"column\">\n                    <h3><a href=\"/profile/#id={{user.id}}\">{{ user.firstName }} {{ user.lastName }}</a></h3>\n                    <h4>{{ user.tag }}</h4>\n                    <p>{{ user.desc }}</p>\n                </div>\n                <md-button class=\"md-raised\">View Profile</md-button>\n                <md-divider ng-if=\"!$last\"></md-divider>\n            </md-list-item>\n        </md-list>\n    </div>\n</div>\n";
+	module.exports = "<div layout=\"column\">\n    <div layout=\"column\" layout-padding style=\"background-color: #abd4bd\">\n        <div>Find a <b>JavaScript</b> mentor...</div>\n    </div>\n\n    <div layout layout-margin layout-padding>\n        <div layout=\"column\" flex=\"25\">\n            <md-whiteframe class=\"md-whiteframe-1dp\" flex-sm=\"45\" flex-gt-sm=\"35\" flex-gt-md=\"25\" layout=\"column\" layout-align=\"center center\">\n                <span>.md-whiteframe-1dp</span>\n                <span>.md-whiteframe-1dp</span>\n                <span>.md-whiteframe-1dp</span>\n                <span>.md-whiteframe-1dp</span>\n            </md-whiteframe>\n        </div>\n        <md-list flex=\"75\">\n            <md-list-item class=\"md-3-line\" ng-repeat=\"user in ctrl.users\">\n                <img ng-src=\"{{user.face}}?{{$index}}\" class=\"md-avatar\" alt=\"{{item.who}}\">\n                <div class=\"md-list-item-text\" layout=\"column\">\n                    <h3><a href=\"/profile/?{{user.id}}\">{{ user.firstName }} {{ user.lastName }}</a></h3>\n                    <h4>{{ user.tag }}</h4>\n                    <p>{{ user.desc }}</p>\n                </div>\n                <md-button class=\"md-raised\">View Profile</md-button>\n                <md-divider ng-if=\"!$last\"></md-divider>\n            </md-list-item>\n        </md-list>\n    </div>\n</div>\n";
 
 /***/ }
 

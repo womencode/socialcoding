@@ -13,3 +13,5 @@ require("angular-touch");
 // angular extentions
 require("angular-material");
 require("angular-ui-router");
+require("firebase");
+require("angularfire");

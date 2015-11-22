@@ -5,8 +5,15 @@
                 <img ng-src="/img/ryan.jpg" class="md-avatar" width="200">
             </div>
 
-            <div flex>
+            <div flex layout="column">
                 <h1>{{ ctrl.user.firstName }} {{ ctrl.user.lastName }} <md-icon md-font-library="material-icons">online</md-icon></h1>
+
+                <b>Skills</b>
+                <md-chips ng-model="ctrl.user.skills" readonly="true"></md-chips>
+
+                <b>Languages</b>
+                <md-chips ng-model="ctrl.user.languages" readonly="true"></md-chips>
+
             </div>
 
             <md-whiteframe class="md-whiteframe-1dp" style="background-color: #ffffff" layout-paddingx layout="column" layout-align="center center">
@@ -31,18 +38,7 @@
         <h3>About Me</h3>
 
         <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-padding>
-            <span>Text goes here</span>
-        </md-whiteframe>
-
-        <h3>Skills</h3>
-
-        <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-padding>
-            <md-list>
-                <md-list-item ng-repeat="skill in ctrl.user.skills">
-                    <h4>{{skill.name}}</h4>
-                    <p>{{skil.desc}}</p>
-                </md-list-item>
-            </md-list>
+            <span>{{ ctrl.user.aboutMe }}</span>
         </md-whiteframe>
     </div>
 </div>

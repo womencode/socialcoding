@@ -1,20 +1,9 @@
-module.exports = function ProfileCtrl() {
+var _ = require('lodash');
+
+module.exports = function ProfileCtrl(usersService, $window) {
     var ctrl = this;
 
-    ctrl.user = {
-        firstName: 'Ryan',
-        skills: [
-            {
-                name: 'JavaScript',
-                desc: '...'
-            },
-            {
-                name: 'iOS',
-                desc: '...'
-            },
-            {
-                name: 'AWS',
-                desc: '...'
-            }]
-    };
+    usersService.users.$watch(function () {
+       ctrl.user = _.find(usersService.users, {id: Number($window.location.search.substr(1))});
+    });
 };
