@@ -1,12 +1,28 @@
-<div>
-    <md-list>
-        <md-list-item class="md-3-line" ng-repeat="user in ctrl.users">
-            <img ng-src="{{user.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
-            <div class="md-list-item-text" layout="column">
-                <h3><a href="/profile/#id={{user.id}}">{{ user.firstName }} {{ user.lastName }}</a></h3>
-                <h4>{{ user.tag }}</h4>
-                <p>{{ user.desc }}</p>
-            </div>
-        </md-list-item>
-    </md-list>
+<div layout="column">
+    <div layout="column" layout-padding style="background-color: #abd4bd">
+        <div>Find a <b>JavaScript</b> mentor...</div>
+    </div>
+
+    <div layout layout-margin layout-padding>
+        <div layout="column" flex="25">
+            <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="column" layout-align="center center">
+                <span>.md-whiteframe-1dp</span>
+                <span>.md-whiteframe-1dp</span>
+                <span>.md-whiteframe-1dp</span>
+                <span>.md-whiteframe-1dp</span>
+            </md-whiteframe>
+        </div>
+        <md-list flex="75">
+            <md-list-item class="md-3-line" ng-repeat="user in ctrl.users">
+                <img ng-src="{{user.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
+                <div class="md-list-item-text" layout="column">
+                    <h3><a href="/profile/#id={{user.id}}">{{ user.firstName }} {{ user.lastName }}</a></h3>
+                    <h4>{{ user.tag }}</h4>
+                    <p>{{ user.desc }}</p>
+                </div>
+                <md-button class="md-raised">View Profile</md-button>
+                <md-divider ng-if="!$last"></md-divider>
+            </md-list-item>
+        </md-list>
+    </div>
 </div>

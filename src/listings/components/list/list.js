@@ -11,7 +11,63 @@ module.exports = function ListCtrl() {
             tag: 'React.js/flux enthusiast, author of react-google-maps',
             desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
             skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
-        }
+        },
+        {
+            id: 1,
+            firstName: 'Ryan',
+            lastName: 'Campbell',
+            tag: 'React.js/flux enthusiast, author of react-google-maps',
+            desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
+            skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
+        },
+        {
+            id: 1,
+            firstName: 'Ryan',
+            lastName: 'Campbell',
+            tag: 'React.js/flux enthusiast, author of react-google-maps',
+            desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
+            skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
+        },
+        {
+            id: 1,
+            firstName: 'Ryan',
+            lastName: 'Campbell',
+            tag: 'React.js/flux enthusiast, author of react-google-maps',
+            desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
+            skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
+        },{
+            id: 1,
+            firstName: 'Ryan',
+            lastName: 'Campbell',
+            tag: 'React.js/flux enthusiast, author of react-google-maps',
+            desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
+            skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
+        },
+        {
+            id: 1,
+            firstName: 'Ryan',
+            lastName: 'Campbell',
+            tag: 'React.js/flux enthusiast, author of react-google-maps',
+            desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
+            skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
+        },{
+            id: 1,
+            firstName: 'Ryan',
+            lastName: 'Campbell',
+            tag: 'React.js/flux enthusiast, author of react-google-maps',
+            desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
+            skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
+        },
+        {
+            id: 1,
+            firstName: 'Ryan',
+            lastName: 'Campbell',
+            tag: 'React.js/flux enthusiast, author of react-google-maps',
+            desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
+            skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
+        },
+
+
     ];
 
 
