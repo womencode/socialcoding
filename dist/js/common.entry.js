@@ -76805,8 +76805,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.components([
-	   __webpack_require__(45),
-	   __webpack_require__(34)
+	   __webpack_require__(34),
+	   __webpack_require__(36)
 	]);
 
 /***/ },
@@ -76814,13 +76814,28 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.component({
-	    name: 'commonHeader',
-	    controller: __webpack_require__(35),
-	    template: __webpack_require__(36)
-	});
+	    name: 'commonFooter',
+	    template: __webpack_require__(35)
+	})
 
 /***/ },
 /* 35 */
+/***/ function(module, exports) {
+
+	module.exports = "<div style=\"background-color: #3d675f; min-height: 200px\">Footer</div>";
+
+/***/ },
+/* 36 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = ui.component({
+	    name: 'commonHeader',
+	    controller: __webpack_require__(37),
+	    template: __webpack_require__(38)
+	});
+
+/***/ },
+/* 37 */
 /***/ function(module, exports) {
 
 	module.exports = function HeaderCtrl() {
@@ -76828,33 +76843,10 @@
 	};
 
 /***/ },
-/* 36 */
+/* 38 */
 /***/ function(module, exports) {
 
 	module.exports = "<md-toolbar style=\"background-color: #3d675f\">\n    <div class=\"md-toolbar-tools\">\n        <span><b>Code</b>Socially</span>\n\n        <span flex></span>\n\n        <md-button>\n            <md-button>\n                <md-icon md-font-library=\"material-icons\">person</md-icon>\n                Login\n            </md-button>\n        </md-button>\n    </div>\n</md-toolbar>";
-
-/***/ },
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = ui.component({
-	    name: 'commonFooter',
-	    template: __webpack_require__(46)
-	})
-
-/***/ },
-/* 46 */
-/***/ function(module, exports) {
-
-	module.exports = "<div style=\"background-color: #3d675f; min-height: 200px\">Footer</div>";
 
 /***/ }
 /******/ ]);

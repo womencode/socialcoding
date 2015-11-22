@@ -45,13 +45,13 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(37);
+	__webpack_require__(47);
 
 	module.exports = ui.module({
 	    name: 'root',
 	    url: '',
 	    abstract: true,
-	    components: __webpack_require__(39),
+	    components: __webpack_require__(49),
 	    subModules: [
 	        'ngAria',
 	        'ngMaterial',
@@ -64,34 +64,34 @@
 
 /***/ },
 
-/***/ 37:
+/***/ 47:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 39:
+/***/ 49:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.components([
-	   __webpack_require__(40)
+	   __webpack_require__(50)
 	]);
 
 /***/ },
 
-/***/ 40:
+/***/ 50:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.component({
 	    name: 'rootSignup',
-	    controller: __webpack_require__(41),
-	    template: __webpack_require__(44)
+	    controller: __webpack_require__(51),
+	    template: __webpack_require__(54)
 	});
 
 /***/ },
 
-/***/ 41:
+/***/ 51:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function SignupCtrl($mdDialog) {
@@ -101,9 +101,9 @@
 
 	    function openDialog(ev) {
 	        $mdDialog.show({
-	            controller: __webpack_require__(42),
+	            controller: __webpack_require__(52),
 	            controllerAs: 'ctrl',
-	            template: __webpack_require__(43),
+	            template: __webpack_require__(53),
 	            parent: angular.element(document.body),
 	            targetEvent: ev,
 	            clickOutsideToClose:true
@@ -113,7 +113,7 @@
 
 /***/ },
 
-/***/ 42:
+/***/ 52:
 /***/ function(module, exports) {
 
 	module.exports = function SignupDialogCtrl($mdDialog, $window) {
@@ -133,14 +133,14 @@
 
 /***/ },
 
-/***/ 43:
+/***/ 53:
 /***/ function(module, exports) {
 
 	module.exports = "<md-dialog aria-label=\"Signup\" ng-cloak>\n    <form>\n        <md-dialog-content>\n            <div class=\"md-dialog-content\">\n                <div layout layout-sm=\"column\">\n                    <md-input-container flex>\n                        <label>First name</label>\n                        <input ng-model=\"ctrl.user.firstName\">\n                    </md-input-container>\n                    <md-input-container flex>\n                        <label>Last Name</label>\n                        <input ng-model=\"ctrl.user.lastName\">\n                    </md-input-container>\n                </div>\n\n                <div layout layout-sm=\"column\">\n                    <md-input-container flex>\n                        <label>Email</label>\n                        <input type=\"email\" ng-model=\"ctrl.user.email\">\n                    </md-input-container>\n                </div>\n\n                <div layout layout-sm=\"column\">\n                    <md-input-container flex>\n                        <label>Password</label>\n                        <input ng-model=\"ctrl.user.password\">\n                    </md-input-container>\n                    <md-input-container flex>\n                        <label>Confirm</label>\n                        <input ng-model=\"ctrl.user.password\">\n                    </md-input-container>\n                </div>\n\n            </div>\n        </md-dialog-content>\n        <md-dialog-actions layout=\"row\" layout-align=\"end\">\n            <md-button class=\"md-primary\" ng-click=\"ctrl.signup()\">\n                Signup\n            </md-button>\n            <md-button ng-click=\"ctrl.cancel()\">\n                Cancel\n            </md-button>\n        </md-dialog-actions>\n    </form>\n</md-dialog>";
 
 /***/ },
 
-/***/ 44:
+/***/ 54:
 /***/ function(module, exports) {
 
 	module.exports = "<div layout layout-align=\"center center\" layout-padding flex style=\"background-color: #abd4bd\">\n    Get started\n    <md-button class=\"md-raised\" ng-click=\"ctrl.openDialog('student')\">learning</md-button>\n    or\n    <md-button class=\"md-raised\" ng-click=\"ctrl.openDialog('mentor')\">teaching</md-button>\n    within minutes!\n</div>";
