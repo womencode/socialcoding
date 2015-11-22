@@ -65,7 +65,7 @@
 	      mode: 'javascript'
 	    });
 	  var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, {
-	    defaultText: '// JavaScript Editing with Firepad!\nfunction go() {\n  var message = "Hello, world.";\n  console.log(message);\n}'
+	    defaultText: '// JavaScript Editing with a mentor!\nfunction go() {\n  var message = "Hello, world.";\n  console.log(message);\n}'
 	  });
 	  var userId = Math.floor(Math.random() * 9999999999).toString();
 	  var firepadUserList =
