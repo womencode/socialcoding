@@ -40,14 +40,16 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ function(module, exports) {
+/******/ ({
+
+/***/ 0:
+/***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.module({
 	    name: 'listings',
 	    url: '',
 	    abstract: true,
+	    components: __webpack_require__(47),
 	    subModules: [
 	        'ngAria',
 	        'ngMaterial',
@@ -58,5 +60,99 @@
 	    ]
 	})();
 
+/***/ },
+
+/***/ 47:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = ui.components([
+	    __webpack_require__(48)
+	]);
+
+/***/ },
+
+/***/ 48:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = ui.component({
+	    name: 'listingsList',
+	    controller: __webpack_require__(49),
+	    template: __webpack_require__(50)
+	})
+
+/***/ },
+
+/***/ 49:
+/***/ function(module, exports) {
+
+	module.exports = function ListCtrl() {
+	    var ctrl = this;
+
+	    var imagePath = 'img/list/60.jpeg';
+
+	    ctrl.users = [
+	        {
+	            id: 1,
+	            firstName: 'Ryan',
+	            lastName: 'Campbell',
+	            tag: 'React.js/flux enthusiast, author of react-google-maps',
+	            desc: "Tom is a JavaScript expert who has passion in creating reusable UI components with React.js. He's also like to use flux to organize complex business logics using unidirectional data-flow. He has",
+	            skills: ['JavaScript', 'iOS', 'AWS', 'Grails', 'Node.JS']
+	        }
+	    ];
+
+	    ctrl.phones = [
+	        { type: 'Home', number: '(555) 251-1234' },
+	        { type: 'Cell', number: '(555) 786-9841' },
+	        { type: 'Office', number: '(555) 314-1592' }
+	    ];
+
+	    ctrl.todos = [
+	        {
+	            face : imagePath,
+	            what: 'Brunch this weekend?',
+	            who: 'Min Li Chan',
+	            when: '3:08PM',
+	            notes: " I'll be in your neighborhood doing errands"
+	        },
+	        {
+	            face : imagePath,
+	            what: 'Brunch this weekend?',
+	            who: 'Min Li Chan',
+	            when: '3:08PM',
+	            notes: " I'll be in your neighborhood doing errands"
+	        },
+	        {
+	            face : imagePath,
+	            what: 'Brunch this weekend?',
+	            who: 'Min Li Chan',
+	            when: '3:08PM',
+	            notes: " I'll be in your neighborhood doing errands"
+	        },
+	        {
+	            face : imagePath,
+	            what: 'Brunch this weekend?',
+	            who: 'Min Li Chan',
+	            when: '3:08PM',
+	            notes: " I'll be in your neighborhood doing errands"
+	        },
+	        {
+	            face : imagePath,
+	            what: 'Brunch this weekend?',
+	            who: 'Min Li Chan',
+	            when: '3:08PM',
+	            notes: " I'll be in your neighborhood doing errands"
+	        },
+	    ];
+	};
+
+/***/ },
+
+/***/ 50:
+/***/ function(module, exports) {
+
+	module.exports = "<div>\n    <md-list>\n        <md-list-item class=\"md-3-line\" ng-repeat=\"user in ctrl.users\">\n            <img ng-src=\"{{user.face}}?{{$index}}\" class=\"md-avatar\" alt=\"{{item.who}}\">\n            <div class=\"md-list-item-text\" layout=\"column\">\n                <h3><a href=\"/profile/#id={{user.id}}\">{{ user.firstName }} {{ user.lastName }}</a></h3>\n                <h4>{{ user.tag }}</h4>\n                <p>{{ user.desc }}</p>\n            </div>\n        </md-list-item>\n    </md-list>\n</div>";
+
 /***/ }
-/******/ ]);
+
+/******/ });

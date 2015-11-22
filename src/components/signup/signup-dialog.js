@@ -9,7 +9,6 @@ module.exports = function SignupDialogCtrl($mdDialog, $window) {
     }
 
     function cancel() {
-        console.log('cancel!!');
         $mdDialog.cancel();
     }
 };
