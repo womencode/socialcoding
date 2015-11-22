@@ -11,11 +11,11 @@ module.exports = function SignupDialogCtrl($mdDialog, $window, isMentor, usersSe
     ctrl.cancel = cancel;
 
     function signup() {
-        ctrl.user.id = usersService.users.length + 1;
+        //ctrl.user.id = usersService.users.length + 1;
 
-        usersService.users.$add(ctrl.user).then(function () {
+        //usersService.users.$add(ctrl.user).then(function () {
             $window.location.href = '/dashboard/';
-        });
+        //});
     }
 
     function cancel() {
