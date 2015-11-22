@@ -12468,6 +12468,14 @@
 
 	    usersService.users.$watch(function () {
 	       ctrl.user = _.find(usersService.users, {id: Number($window.location.search.substr(1))});
+
+	        var user = _.find(usersService.users, { id: 1});
+
+	        user.firstName = 'Alison';
+	        user.lastName = 'Yesilcimen';
+	        user.skills = ['Entrepreneurship', 'Publishing', 'Social Media Marketing'];
+
+	        usersService.users.$save(user);
 	    });
 	};
 
@@ -12476,7 +12484,7 @@
 /***/ 51:
 /***/ function(module, exports) {
 
-	module.exports = "<div layout=\"column\">\n    <div layout style=\"background-color: #abd4bd\">\n        <div layout layout-padding flex>\n            <div>\n                <img ng-src=\"/img/ryan.jpg\" class=\"md-avatar\" width=\"200\">\n            </div>\n\n            <div flex layout=\"column\">\n                <h1>{{ ctrl.user.firstName }} {{ ctrl.user.lastName }} <md-icon md-font-library=\"material-icons\">online</md-icon></h1>\n\n                <b>Skills</b>\n                <md-chips ng-model=\"ctrl.user.skills\" readonly=\"true\"></md-chips>\n\n                <b>Languages</b>\n                <md-chips ng-model=\"ctrl.user.languages\" readonly=\"true\"></md-chips>\n\n            </div>\n\n            <md-whiteframe class=\"md-whiteframe-1dp\" style=\"background-color: #ffffff\" layout-paddingx layout=\"column\" layout-align=\"center center\">\n                <div>Likelihood of Reply: 89%</div>\n                <div>Response Time: within a few hours</div>\n\n                <div flex></div>\n\n                <a href=\"/code/\">\n                    <md-button class=\"md-raised md-primary\" style=\"background-color: #e4574b;\">\n                        <md-icon md-font-library=\"material-icons\">call</md-icon>\n                        Get Help from {{ctrl.user.firstName}}\n                    </md-button>\n                </a>\n\n            </md-whiteframe>\n        </div>\n    </div>\n\n    <div layout=\"column\" layout-margin>\n\n        <h3>About Me</h3>\n\n        <md-whiteframe class=\"md-whiteframe-1dp\" flex-sm=\"45\" flex-gt-sm=\"35\" flex-gt-md=\"25\" layout layout-padding>\n            <span>{{ ctrl.user.aboutMe }}</span>\n        </md-whiteframe>\n    </div>\n</div>";
+	module.exports = "<div layout=\"column\">\n    <div layout style=\"background-color: #abd4bd\">\n        <div layout layout-padding flex>\n            <div>\n                <img ng-src=\"/img/pics/{{ ctrl.user.id }}.png\" class=\"md-avatar\" width=\"200\">\n            </div>\n\n            <div flex layout=\"column\">\n                <h1>{{ ctrl.user.firstName }} {{ ctrl.user.lastName }} <md-icon md-font-library=\"material-icons\">online</md-icon></h1>\n\n                <b>Skills</b>\n                <md-chips ng-model=\"ctrl.user.skills\" readonly=\"true\"></md-chips>\n\n                <b>Languages</b>\n                <md-chips ng-model=\"ctrl.user.languages\" readonly=\"true\"></md-chips>\n\n            </div>\n\n            <md-whiteframe class=\"md-whiteframe-1dp\" style=\"background-color: #ffffff\" layout-paddingx layout=\"column\" layout-align=\"center center\">\n                <div>Likelihood of Reply: 89%</div>\n                <div>Response Time: within a few hours</div>\n\n                <div flex></div>\n\n                <a href=\"/code/\">\n                    <md-button class=\"md-raised md-primary\" style=\"background-color: #e4574b;\">\n                        <md-icon md-font-library=\"material-icons\">call</md-icon>\n                        Get Help from {{ctrl.user.firstName}}\n                    </md-button>\n                </a>\n\n            </md-whiteframe>\n        </div>\n    </div>\n\n    <div layout=\"column\" layout-margin>\n\n        <h3>About Me</h3>\n\n        <md-whiteframe class=\"md-whiteframe-1dp\" flex-sm=\"45\" flex-gt-sm=\"35\" flex-gt-md=\"25\" layout layout-padding>\n            <span>{{ ctrl.user.aboutMe }}</span>\n        </md-whiteframe>\n    </div>\n</div>";
 
 /***/ }
 
