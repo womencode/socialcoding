@@ -9,6 +9,7 @@ module.exports = ui.module({
         'ngMaterial',
         'ngMessages',
         'ngSanitize',
-        'ui.router'
+        'ui.router',
+        'common'
     ]
 })();

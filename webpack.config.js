@@ -18,6 +18,10 @@ module.exports = {
     module: {
         loaders: [
             {
+                test: /\.html$/,
+                loader: "html"
+            },
+            {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader")
             },
