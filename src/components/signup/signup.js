@@ -6,6 +6,7 @@ module.exports = function SignupCtrl($mdDialog) {
     function openDialog(ev) {
         $mdDialog.show({
             controller: require('./signup-dialog'),
+            controllerAs: 'ctrl',
             template: require('./signup-dialog.tpl.html'),
             parent: angular.element(document.body),
             targetEvent: ev,

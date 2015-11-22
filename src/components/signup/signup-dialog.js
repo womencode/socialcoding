@@ -1,14 +1,15 @@
-module.exports = function SignupDialogCtrl($mdDialog) {
+module.exports = function SignupDialogCtrl($mdDialog, $window) {
     var self = this;
 
     self.signup = signup;
     self.cancel = cancel;
 
     function signup() {
-        // go to next page
+        $window.location.href = '/dashboard/';
     }
 
     function cancel() {
+        console.log('cancel!!');
         $mdDialog.cancel();
     }
 };
