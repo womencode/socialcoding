@@ -1,0 +1,12 @@
+<div>
+    <md-list>
+        <md-list-item class="md-3-line" ng-repeat="user in ctrl.users">
+            <img ng-src="{{user.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}">
+            <div class="md-list-item-text" layout="column">
+                <h3><a href="/profile/#id={{user.id}}">{{ user.firstName }} {{ user.lastName }}</a></h3>
+                <h4>{{ user.tag }}</h4>
+                <p>{{ user.desc }}</p>
+            </div>
+        </md-list-item>
+    </md-list>
+</div>

@@ -1,15 +1,25 @@
-<html>
+<!doctype html>
+<html class="no-js" lang="en" ng-app="listings">
 <head>
     <meta charset="utf-8">
-    <title>Listings</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Listings - Coding Socially</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/listings.css">
 </head>
-<body ng-app="listings">
+<body>
+<common-header></common-header>
 
-<ui-header></ui-header>
+<h1>Listings</h1>
 
-<div>Listings</div>
+<listings-list></listings-list>
+
+<common-footer></common-footer>
 
 <script src="/js/common.entry.js"></script>
 <script src="/js/listings.entry.js"></script>

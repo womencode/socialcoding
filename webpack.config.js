@@ -7,6 +7,7 @@ module.exports = {
         root: "./index.js",
         code: "./code/index.js",
         common: "./common/index.js",
+        dashboard: "./dashboard/index.js",
         listings: "./listings/index.js",
         profile: "./profile/index.js",
         signup: "./signup/index.js"

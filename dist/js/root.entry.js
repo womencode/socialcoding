@@ -45,13 +45,13 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(33);
+	__webpack_require__(37);
 
 	module.exports = ui.module({
 	    name: 'root',
 	    url: '',
 	    abstract: true,
-	    components: __webpack_require__(35),
+	    components: __webpack_require__(39),
 	    subModules: [
 	        'ngAria',
 	        'ngMaterial',
@@ -64,34 +64,34 @@
 
 /***/ },
 
-/***/ 33:
+/***/ 37:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 35:
+/***/ 39:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.components([
-	   __webpack_require__(36)
+	   __webpack_require__(40)
 	]);
 
 /***/ },
 
-/***/ 36:
+/***/ 40:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.component({
 	    name: 'rootSignup',
-	    controller: __webpack_require__(37),
-	    template: __webpack_require__(40)
+	    controller: __webpack_require__(41),
+	    template: __webpack_require__(44)
 	});
 
 /***/ },
 
-/***/ 37:
+/***/ 41:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function SignupCtrl($mdDialog) {
@@ -101,9 +101,9 @@
 
 	    function openDialog(ev) {
 	        $mdDialog.show({
-	            controller: __webpack_require__(38),
+	            controller: __webpack_require__(42),
 	            controllerAs: 'ctrl',
-	            template: __webpack_require__(39),
+	            template: __webpack_require__(43),
 	            parent: angular.element(document.body),
 	            targetEvent: ev,
 	            clickOutsideToClose:true
@@ -113,7 +113,7 @@
 
 /***/ },
 
-/***/ 38:
+/***/ 42:
 /***/ function(module, exports) {
 
 	module.exports = function SignupDialogCtrl($mdDialog, $window) {
@@ -127,21 +127,20 @@
 	    }
 
 	    function cancel() {
-	        console.log('cancel!!');
 	        $mdDialog.cancel();
 	    }
 	};
 
 /***/ },
 
-/***/ 39:
+/***/ 43:
 /***/ function(module, exports) {
 
 	module.exports = "<md-dialog aria-label=\"Signup\" ng-cloak>\n    <form>\n        <md-dialog-content>\n            <div class=\"md-dialog-content\">\n                <div layout layout-sm=\"column\">\n                    <md-input-container flex>\n                        <label>First name</label>\n                        <input ng-model=\"ctrl.user.firstName\">\n                    </md-input-container>\n                    <md-input-container flex>\n                        <label>Last Name</label>\n                        <input ng-model=\"ctrl.user.lastName\">\n                    </md-input-container>\n                </div>\n\n                <div layout layout-sm=\"column\">\n                    <md-input-container flex>\n                        <label>Email</label>\n                        <input type=\"email\" ng-model=\"ctrl.user.email\">\n                    </md-input-container>\n                </div>\n\n                <div layout layout-sm=\"column\">\n                    <md-input-container flex>\n                        <label>Password</label>\n                        <input ng-model=\"ctrl.user.password\">\n                    </md-input-container>\n                    <md-input-container flex>\n                        <label>Confirm</label>\n                        <input ng-model=\"ctrl.user.password\">\n                    </md-input-container>\n                </div>\n\n            </div>\n        </md-dialog-content>\n        <md-dialog-actions layout=\"row\" layout-align=\"end\">\n            <md-button class=\"md-primary\" ng-click=\"ctrl.signup()\">\n                Signup\n            </md-button>\n            <md-button ng-click=\"ctrl.cancel()\">\n                Cancel\n            </md-button>\n        </md-dialog-actions>\n    </form>\n</md-dialog>";
 
 /***/ },
 
-/***/ 40:
+/***/ 44:
 /***/ function(module, exports) {
 
 	module.exports = "<div layout layout-align=\"center\">\n    <md-button class=\"md-raised\" ng-click=\"ctrl.openDialog('student')\">I'm a Student</md-button>\n    <md-button class=\"md-raised\" ng-click=\"ctrl.openDialog('mentor')\">I'm a Mentor</md-button>\n</div>";
