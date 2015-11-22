@@ -1,0 +1,23 @@
+{
+  "name": "womencode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/womencode"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^1.12.8",
+    "webpack-dev-server": "^1.12.1"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "lodash": "^3.10.1"
+  }
+}
