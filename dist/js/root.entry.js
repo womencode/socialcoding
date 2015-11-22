@@ -45,13 +45,13 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(52);
+	__webpack_require__(54);
 
 	module.exports = ui.module({
 	    name: 'root',
 	    url: '',
 	    abstract: true,
-	    components: __webpack_require__(54),
+	    components: __webpack_require__(56),
 	    subModules: [
 	        'ngAria',
 	        'ngMaterial',
@@ -64,34 +64,34 @@
 
 /***/ },
 
-/***/ 52:
+/***/ 54:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 54:
+/***/ 56:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.components([
-	   __webpack_require__(55)
+	   __webpack_require__(57)
 	]);
 
 /***/ },
 
-/***/ 55:
+/***/ 57:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = ui.component({
 	    name: 'rootSignup',
-	    controller: __webpack_require__(56),
-	    template: __webpack_require__(59)
+	    controller: __webpack_require__(58),
+	    template: __webpack_require__(61)
 	});
 
 /***/ },
 
-/***/ 56:
+/***/ 58:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function SignupCtrl($mdDialog) {
@@ -101,9 +101,9 @@
 
 	    function openDialog(ev, isMentor) {
 	        $mdDialog.show({
-	            controller: __webpack_require__(57),
+	            controller: __webpack_require__(59),
 	            controllerAs: 'ctrl',
-	            template: __webpack_require__(58),
+	            template: __webpack_require__(60),
 	            parent: angular.element(document.body),
 	            targetEvent: ev,
 	            clickOutsideToClose:true,
@@ -118,10 +118,10 @@
 
 /***/ },
 
-/***/ 57:
+/***/ 59:
 /***/ function(module, exports) {
 
-	module.exports = function SignupDialogCtrl($mdDialog, $window, isMentor, usersService) {
+	module.exports = function SignupDialogCtrl($mdDialog, $window, $cookies, isMentor, usersService) {
 	    var ctrl = this;
 
 	    ctrl.user = {
@@ -134,6 +134,8 @@
 	    ctrl.cancel = cancel;
 
 	    function signup() {
+	        $cookies.put('login', ctrl.user);
+
 	        //ctrl.user.id = usersService.users.length + 1;
 
 	        //usersService.users.$add(ctrl.user).then(function () {
@@ -148,14 +150,14 @@
 
 /***/ },
 
-/***/ 58:
+/***/ 60:
 /***/ function(module, exports) {
 
 	module.exports = "<md-dialog flex=\"90\" aria-label=\"Signup\" ng-cloak>\n    <form>\n        <md-dialog-content>\n            <div class=\"md-dialog-content\" flex>\n                <div layout layout-sm=\"column\">\n                    <md-input-container flex>\n                        <label>First name</label>\n                        <input ng-model=\"ctrl.user.firstName\">\n                    </md-input-container>\n                    <md-input-container flex>\n                        <label>Last Name</label>\n                        <input ng-model=\"ctrl.user.lastName\">\n                    </md-input-container>\n                </div>\n\n                <div layout layout-sm=\"column\">\n                    <md-input-container flex>\n                        <label>Email</label>\n                        <input type=\"email\" ng-model=\"ctrl.user.email\">\n                    </md-input-container>\n                </div>\n\n                <div layout layout-sm=\"column\">\n                    <md-input-container flex>\n                        <label>Password</label>\n                        <input type=\"password\" ng-model=\"ctrl.user.password\">\n                    </md-input-container>\n                    <md-input-container flex>\n                        <label>Confirm</label>\n                        <input type=\"password\" ng-model=\"ctrl.confirmPassword\">\n                    </md-input-container>\n                </div>\n\n                <div layout layout-sm=\"column\" flex>\n                    <md-input-container flex>\n                        <label>Skills</label>\n                        <md-chips ng-model=\"ctrl.user.skills\"></md-chips>\n                    </md-input-container>\n                </div>\n\n                <div layout layout-sm=\"column\">\n                    <md-input-container flex>\n                        <label>Languages</label>\n                        <md-chips ng-model=\"ctrl.user.languages\"></md-chips>\n                    </md-input-container>\n                </div>\n\n            </div>\n        </md-dialog-content>\n        <md-dialog-actions layout=\"row\" layout-align=\"end\">\n            <md-button class=\"md-primary\" ng-click=\"ctrl.signup()\">\n                Signup\n            </md-button>\n            <md-button ng-click=\"ctrl.cancel()\">\n                Cancel\n            </md-button>\n        </md-dialog-actions>\n    </form>\n</md-dialog>";
 
 /***/ },
 
-/***/ 59:
+/***/ 61:
 /***/ function(module, exports) {
 
 	module.exports = "<div layout layout-align=\"center center\" layout-padding flex style=\"background-color: #abd4bd\">\n    Get started\n    <md-button class=\"md-raised\" ng-click=\"ctrl.openDialog($event, false)\">learning</md-button>\n    or\n    <md-button class=\"md-raised\" ng-click=\"ctrl.openDialog($event, true)\">teaching</md-button>\n    within minutes!\n</div>";
